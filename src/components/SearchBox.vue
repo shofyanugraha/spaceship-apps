@@ -2,9 +2,14 @@
   <div class="searchbox py-6">
     <div class="container">
       <div class="searchbox-holder">
+        <h1 class="title is-3 has-text-centered">Starship Finder</h1>
         <div class="columns is-gapless">
           <div class="column">
-            <b-input v-model="search" @keypress.native.enter="submitSearch"></b-input>
+            <b-input
+              id="search-input"
+              v-model="search"
+              @keypress.native.enter="submitSearch"
+            ></b-input>
           </div>
           <div class="column is-2">
             <b-button class="btn-search" type="is-primary" @click="submitSearch">Search</b-button>

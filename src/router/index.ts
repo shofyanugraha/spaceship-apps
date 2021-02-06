@@ -11,11 +11,12 @@ const router = new VueRouter({
   routes
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 router.beforeEach((to, from, next) => {
   NProgress.start();
   next();
 });
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 router.afterEach((to, from) => {
   NProgress.done();
 });

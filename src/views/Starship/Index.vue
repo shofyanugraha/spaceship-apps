@@ -7,7 +7,7 @@
         <template v-if="starships.length > 0">
           <div class="columns is-multiline">
             <div v-for="(starship, key) in starships" :key="key" class="column is-6">
-              <starship-item :item-data="starship" />
+              <starship-item :item-data="starship" @click.native="clickHandler(starship)" />
             </div>
           </div>
         </template>
@@ -17,6 +17,19 @@
         </infinite-loading>
       </div>
     </div>
+    <b-modal
+      v-model="showDetail"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="true"
+      aria-role="dialog"
+      aria-label="Detail Starship"
+      aria-modal
+    >
+      <template #default="props">
+        <starship-detail :selected="selected" @close="props.close" />
+      </template>
+    </b-modal>
   </div>
 </template>
 <script lang="ts">
@@ -98,8 +111,15 @@ export default class StarshipIndex extends Vue {
         $state.complete();
       }
     } else {
+      $state.loaded();
       $state.complete();
     }
+  }
+
+  clickHandler(starship: StarshipInterface) {
+    this.showDetail = true;
+    const id = starship.url.split("/");
+    this.selected = parseInt(id[id.length - 2]);
   }
 
   mounted() {

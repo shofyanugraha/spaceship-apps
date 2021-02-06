@@ -57,7 +57,6 @@ export default <Module<StarshipState, RootState>>{
     async getList({ commit }, params = {}) {
       try {
         const res: any = await starshipsAPI.all(params.data);
-        console.log(res);
         if (params.action === "new") {
           commit(SET_STARSHIPS, res.data.results);
         } else {
@@ -71,7 +70,7 @@ export default <Module<StarshipState, RootState>>{
     async getDetail({ commit }, params = {}) {
       try {
         const res = await starshipsAPI.detail(params);
-        commit(SET_STARSHIPS, res.data);
+        commit(SET_STARSHIP, res.data);
         return res;
       } catch (e) {
         return e.response;
