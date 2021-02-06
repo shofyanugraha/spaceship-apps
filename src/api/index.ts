@@ -6,6 +6,6 @@ axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
 axios.defaults.proxy = {
   host: "localhost",
-  port: 8081,
+  port: 8080,
   protocol: "https"
 };
