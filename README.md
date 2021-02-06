@@ -1,34 +1,33 @@
-# evos
+# Spaceship
 
-## Project setup
-```
-yarn install
-```
+## Tech Stack Used
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Core:
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- [Vue.js](https://vuejs.org/)
+- [Nuxt.js](https://nuxtjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
+- [Vue Class Component](https://github.com/vuejs/vue-class-component)
+- [Vue Property Decorator](https://github.com/kaorun343/vue-property-decorator)
 
-### Run your unit tests
-```
-yarn test:unit
-```
+Other Plugins:
+- Date manipulation with [Day.js](https://day.js.org/en/)
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
+UI Framework: [Buefy](https://vuetifyjs.com/en/)
 
-### Lints and fixes files
-```
-yarn lint
-```
+Icons:
+ - Feather Icons via [vue-feather-icons](https://github.com/egoist/vue-feather-icons)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Build Setup
+
+```bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn serve
+
+# build for production
+$ yarn build
