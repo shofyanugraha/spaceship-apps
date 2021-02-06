@@ -63,7 +63,6 @@ export default <Module<PeopleState, RootState>>{
         }
         return res;
       } catch (e) {
-        console.log(e);
         return e.response;
       }
     }

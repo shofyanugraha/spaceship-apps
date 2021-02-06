@@ -60,7 +60,6 @@ export default <Module<FilmState, RootState>>{
         }
         return res;
       } catch (e) {
-        console.log(e);
         return e.response;
       }
     }
