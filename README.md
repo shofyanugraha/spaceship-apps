@@ -5,7 +5,6 @@
 Core:
 
 - [Vue.js](https://vuejs.org/)
-- [Nuxt.js](https://nuxtjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vue Router](https://router.vuejs.org/)
 - [Vuex](https://vuex.vuejs.org/)
