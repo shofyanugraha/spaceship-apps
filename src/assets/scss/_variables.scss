@@ -1,0 +1,128 @@
+// Set your colors
+$primary: #5f9da9;
+$primary-invert: findColorInvert($primary);
+$warning: #ffdc00;
+$warning-invert: findColorInvert($warning);
+$danger: #f16528;
+$danger-invert: findColorInvert($danger);
+$twitter: #4099ff;
+$twitter-invert: findColorInvert($twitter);
+$facebook: #09101d;
+$facebook-invert: findColorInvert($facebook);
+$linkedin: #0e76a8;
+$linkedin-invert: findColorInvert($linkedin);
+
+$family-primary: GothamRoundedBook, sans-serif;
+
+$grey: #58585b;
+$grey-invert: findColorInvert($grey);
+$grey_dark: #58585b;
+$light_grey: #9b9b9b;
+$green: #5f9da9;
+$green_hover: #3f7576;
+$dark_green: #2a6874;
+$dark-green-invert: findColorInvert($dark_green);
+$yellow: #ffdc00;
+$dark_yellow: #fcb813;
+$dark-yellow-invert: findColorInvert($dark_yellow);
+$orange: #f16528;
+$blue: #344776;
+$red: #fb3b61;
+$black: #322f31;
+$green_notif: #88c550;
+$red_notif: #e36c6c;
+$yellow_notif: #fcb813;
+$semi_primary: #e9f3f3;
+$mobile: 768px;
+
+// Setup $breakpoints
+$breakpoints: (
+  "mobile": $mobile,
+  "tablet": $tablet,
+  "desktop": $desktop,
+  "widescreen": $widescreen,
+  "fullhd": $fullhd,
+);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+  "white": (
+    $white,
+    $black,
+  ),
+  "black": (
+    $black,
+    $white,
+  ),
+  "grey": (
+    $grey,
+    $grey-invert,
+  ),
+  "light": (
+    $light,
+    $light-invert,
+  ),
+  "dark": (
+    $dark,
+    $dark-invert,
+  ),
+  "dark-green": (
+    $dark_green,
+    $dark-green-invert,
+  ),
+  "dark-yellow": (
+    $dark_yellow,
+    $dark-yellow-invert,
+  ),
+  "primary": (
+    $primary,
+    $primary-invert,
+  ),
+  "info": (
+    $info,
+    $info-invert,
+  ),
+  "success": (
+    $success,
+    $success-invert,
+  ),
+  "warning": (
+    $warning,
+    $warning-invert,
+  ),
+  "danger": (
+    $danger,
+    $danger-invert,
+  ),
+  "twitter": (
+    $twitter,
+    $twitter-invert,
+  ),
+  "facebook": (
+    $facebook,
+    $facebook-invert,
+  ),
+  "linkedin": (
+    $linkedin,
+    $linkedin-invert,
+  ),
+);
+
+$positions: ("top", "left", "bottom", "right");
+
+$fontSizes: (
+  3rem,
+  2.5rem,
+  2rem,
+  1.5rem,
+  1.25rem,
+  1rem,
+  0.875rem,
+  0.75rem,
+  0.625rem
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;

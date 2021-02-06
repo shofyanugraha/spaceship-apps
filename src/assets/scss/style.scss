@@ -1,0 +1,18 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+
+// Import Bulma and Buefy styles
+@import "~bulma/sass/base/_all";
+@import "~bulma/sass/elements/_all";
+@import "~bulma/sass/form/_all";
+@import "~bulma/sass/components/_all";
+@import "~bulma/sass/grid/_all";
+@import "~bulma/sass/layout/_all";
+@import "~bulma/sass/helpers/_all";
+
+@import "~buefy/src/scss/buefy";
+
+
+@import "nprogress";
+
