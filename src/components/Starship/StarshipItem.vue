@@ -54,6 +54,7 @@ svg {
 }
 .starship-item {
   margin-bottom: 0.5rem;
+  cursor: pointer;
   @media screen and (min-width: 767px) {
     margin-bottom: 1rem;
   }

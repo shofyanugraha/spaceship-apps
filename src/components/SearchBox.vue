@@ -8,6 +8,7 @@
             <b-input
               id="search-input"
               v-model="search"
+              placeholder="Enter keywords"
               @keypress.native.enter="submitSearch"
             ></b-input>
           </div>
@@ -35,11 +36,18 @@ export default class SearchBox extends Vue {
 .searchbox {
   background: lighten($warning, 40%);
   &-holder {
-    max-width: 60%;
     margin: 0 auto;
+    max-width: 80%;
+    @media screen and (min-width: 767px) {
+      max-width: 60%;
+    }
   }
   .btn-search {
     width: 100%;
+    margin-top: 1rem;
+    @media screen and (min-width: 767px) {
+      margin-top: 0;
+    }
   }
 }
 </style>

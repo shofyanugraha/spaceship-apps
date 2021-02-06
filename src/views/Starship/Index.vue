@@ -129,7 +129,7 @@ export default class StarshipIndex extends Vue {
 </script>
 <style lang="scss" scoped>
 .starship-list {
-  padding: 0 1rem;
+  padding: 2rem 1rem;
   @media screen and (min-width: 767px) {
     padding: 3rem 0;
   }
