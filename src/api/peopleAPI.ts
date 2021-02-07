@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   all(params = {}) {
     try {
-      return axios.get("/people", { params });
+      return axios.get("/people/", { params });
     } catch (e) {
       return e.response;
     }
