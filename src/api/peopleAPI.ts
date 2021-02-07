@@ -10,14 +10,14 @@ export default {
   },
   detail(id: number | string) {
     try {
-      return axios.get(`/people/${id}`);
+      return axios.get(`/people/${id}/`);
     } catch (e) {
       return e.response;
     }
   },
   schema() {
     try {
-      return axios.get("/people/schema");
+      return axios.get("/people/schema/");
     } catch (e) {
       return e.response;
     }

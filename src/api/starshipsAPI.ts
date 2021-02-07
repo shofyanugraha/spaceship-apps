@@ -10,7 +10,7 @@ export default {
   },
   detail(id: number | string) {
     try {
-      return axios.get(`/starships/${id}`);
+      return axios.get(`/starships/${id}/`);
     } catch (e) {
       return e.response;
     }

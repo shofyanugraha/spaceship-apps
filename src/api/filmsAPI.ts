@@ -10,14 +10,14 @@ export default {
   },
   detail(id: number | string) {
     try {
-      return axios.get(`/films/${id}`);
+      return axios.get(`/films/${id}/`);
     } catch (e) {
       return e.response;
     }
   },
   schema() {
     try {
-      return axios.get("/films/schema");
+      return axios.get("/films/schema/");
     } catch (e) {
       return e.response;
     }
