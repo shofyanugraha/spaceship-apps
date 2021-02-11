@@ -3,11 +3,18 @@
     <search-box :keywords.sync="keywords" @doSearch="searchStarship"></search-box>
 
     <div class="container">
+      <div class="has-text-right mt-5">
+        <b-button class="btn-new" type="is-primary" @click="addHandler">Add</b-button>
+      </div>
       <div class="starship-list">
         <template v-if="starships.length > 0">
           <div class="columns is-multiline">
             <div v-for="(starship, key) in starships" :key="key" class="column is-6">
-              <starship-item :item-data="starship" @click.native="clickHandler(starship)" />
+              <starship-item
+                :item-data="starship"
+                @showDetail="clickHandler(starship)"
+                @editHandler="editHandler(starship)"
+              />
             </div>
           </div>
         </template>
@@ -30,6 +37,19 @@
         <starship-detail :selected="selected" @close="props.close" />
       </template>
     </b-modal>
+    <b-modal
+      v-model="showAdd"
+      has-modal-card
+      trap-focus
+      :destroy-on-hide="true"
+      aria-role="dialog"
+      aria-label="Add Startship"
+      aria-modal
+    >
+      <template #default="props">
+        <starship-add :starship="form" :action="formAction" @close="props.close" />
+      </template>
+    </b-modal>
   </div>
 </template>
 <script lang="ts">
@@ -48,16 +68,23 @@ const StarshipDetail = () =>
     /* webpackChunkName: "starship-list-component"*/ "@/components/Starship/StarshipDetail.vue"
   );
 
+const StarshipAdd = () =>
+  import(/* webpackChunkName: "starship-list-component"*/ "@/components/Starship/StarshipAdd.vue");
+
 @Component({
-  components: { SearchBox, StarshipItem, StarshipDetail }
+  components: { SearchBox, StarshipItem, StarshipDetail, StarshipAdd }
 })
 export default class StarshipIndex extends Vue {
   showDetail = false;
+  showAdd = false;
+  formAction = "new";
   selected: number | null = null;
   currentPage = 1;
   keywords = "";
   action = "new";
   isLast = false;
+
+  form = {};
 
   @starshipModule.State("list") starships!: StarshipInterface;
   @starshipModule.Mutation(SET_STARSHIPS) setStarships!: Function;
@@ -120,6 +147,14 @@ export default class StarshipIndex extends Vue {
     this.showDetail = true;
     const id = starship.url.split("/");
     this.selected = parseInt(id[id.length - 2]);
+  }
+  addHandler() {
+    this.formAction = "new";
+  }
+  editHandler(starship: StarshipInterface) {
+    this.formAction = "edit";
+    this.showAdd = true;
+    this.form = starship;
   }
 
   mounted() {

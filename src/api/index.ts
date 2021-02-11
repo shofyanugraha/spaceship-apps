@@ -6,5 +6,5 @@ axios.defaults.headers["Accept"] = "application/json";
 axios.defaults.proxy = {
   host: "localhost",
   port: 8080,
-  protocol: "https"
+  protocol: "http"
 };

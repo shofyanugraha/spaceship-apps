@@ -1,11 +1,15 @@
 <template>
   <div class="starship-item card">
     <div class="card-content">
-      <h3 class="title is-5">{{ itemData.name }}</h3>
+      <h3 class="title is-5">
+        <a href="javascript:void(0)" @click="$emit('showDetail')">
+          {{ itemData.name }}
+        </a>
+      </h3>
       <div class="subtitle is-6">
         {{ itemData.model }}
       </div>
-      <div class="starship-meta">
+      <div class="starship-meta mb-3">
         <div class="starship-meta-item">
           <film-icon size="16" /> {{ itemData.films.length }} Films
         </div>
@@ -22,6 +26,9 @@
           {{ $date(itemData.updated).format("DD-MM-YYYY") }}
         </div>
       </div>
+      <b-button class="btn-edit" size="is-small" type="is-primary" @click="$emit('editHandler')"
+        >Edit</b-button
+      >
     </div>
   </div>
 </template>
